@@ -14,6 +14,7 @@
 		06B7151D1BDE4F6C002F258E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06B7151B1BDE4F6C002F258E /* LaunchScreen.storyboard */; };
 		06B715281BDE4F6C002F258E /* RegionTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B715271BDE4F6C002F258E /* RegionTestTests.swift */; };
 		06B715331BDE4F6C002F258E /* RegionTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B715321BDE4F6C002F258E /* RegionTestUITests.swift */; };
+		06B715411BDE4F92002F258E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B715401BDE4F92002F258E /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		06B7152E1BDE4F6C002F258E /* RegionTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RegionTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06B715321BDE4F6C002F258E /* RegionTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionTestUITests.swift; sourceTree = "<group>"; };
 		06B715341BDE4F6C002F258E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06B715401BDE4F92002F258E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		06B715421BDE508C002F258E /* Bournemouth-Route.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Bournemouth-Route.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06B715411BDE4F92002F258E /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +81,7 @@
 		06B715061BDE4F6C002F258E = {
 			isa = PBXGroup;
 			children = (
+				06B715401BDE4F92002F258E /* MapKit.framework */,
 				06B715111BDE4F6C002F258E /* RegionTest */,
 				06B715261BDE4F6C002F258E /* RegionTestTests */,
 				06B715311BDE4F6C002F258E /* RegionTestUITests */,
@@ -99,6 +104,7 @@
 			children = (
 				06B715121BDE4F6C002F258E /* AppDelegate.swift */,
 				06B715141BDE4F6C002F258E /* ViewController.swift */,
+				06B715421BDE508C002F258E /* Bournemouth-Route.gpx */,
 				06B715161BDE4F6C002F258E /* Main.storyboard */,
 				06B715191BDE4F6C002F258E /* Assets.xcassets */,
 				06B7151B1BDE4F6C002F258E /* LaunchScreen.storyboard */,
