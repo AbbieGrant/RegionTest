@@ -1,11 +1,3 @@
-//
-//  RegionTestTests.swift
-//  RegionTestTests
-//
-//  Created by Rebecca Hughes (i7674769) on 26/10/2015.
-//  Copyright © 2015 Rebecca Hughes (i7674769). All rights reserved.
-//
-
 import XCTest
 @testable import RegionTest
 

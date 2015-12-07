@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <gpx version="1.1" creator="Xcode">
     
-    <wpt lat="50.719799" lon="-1.879439">
-        <name>Gardens</name>
+    <wpt lat="50.719794" lon="-1.879156">
+        <name>Hidden Area</name>
         <time>2014-09-24T14:55:30Z</time>
     </wpt>
     
-    <wpt lat="50.716098" lon="-1.875780">
-        <name>Bournemouth Pier</name>
+    <wpt lat="50.718454" lon="-1.876792">
+        <name>Path</name>
         <time>2014-09-24T14:55:33Z</time>
     </wpt>
     
-    <wpt lat="50.719914" lon="-1.843552">
-        <name>Boscome Pier</name>
+    <wpt lat="50.716244" lon="-1.875628">
+        <name>Aruba</name>
         <time>2014-09-24T14:55:36Z</time>
     </wpt>
-    
+        
 </gpx>
