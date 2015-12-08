@@ -16,24 +16,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hip-Dy-NcL">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gXp-H8-uog">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </mapView>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Wyu-0i-fUD">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mjo-Dz-CXy">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                                <subviews>
+                                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hip-Dy-NcL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                                    </mapView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hip-Dy-NcL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="c3a-OX-G4W"/>
-                            <constraint firstAttribute="trailing" secondItem="hip-Dy-NcL" secondAttribute="trailing" id="cow-QA-33q"/>
-                            <constraint firstItem="hip-Dy-NcL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="erb-ZX-es9"/>
+                            <constraint firstAttribute="trailing" secondItem="gXp-H8-uog" secondAttribute="trailing" id="crD-ss-Pc1"/>
+                            <constraint firstItem="gXp-H8-uog" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nFb-qS-BUt"/>
+                            <constraint firstItem="gXp-H8-uog" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="u2D-Z0-FFZ"/>
+                            <constraint firstItem="gXp-H8-uog" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wfn-Cw-iPK"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="myMap" destination="hip-Dy-NcL" id="noQ-iJ-kG6"/>
+                        <segue destination="13w-na-HWB" kind="show" id="fdp-EE-SNM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="440" y="429"/>
+            <point key="canvasLocation" x="410" y="429"/>
         </scene>
         <!--Crowd Video-->
         <scene sceneID="tvh-Pg-QrX">

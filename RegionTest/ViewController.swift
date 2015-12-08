@@ -6,14 +6,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var myMap: MKMapView!
     
+    var showingAlert = false
+    var alert: UIAlertController?
     
-    let locationManager = CLLocationManager ()
-
-    
-    @IBOutlet weak var image: UIImageView!
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         
         myMap.setUserTrackingMode(.Follow, animated: true)
@@ -22,18 +22,17 @@ class ViewController: UIViewController {
         locationManager.delegate = self
         
         
-        let hidden = CLLocationCoordinate2D (latitude: 50.719794, longitude: -1.879156)
-        let hiddenRegion = CLCircularRegion (center: hidden, radius: 100, identifier: "hidden")
+        let hidden = CLLocationCoordinate2D(latitude: 50.719794, longitude: -1.879156)
+        let hiddenRegion = CLCircularRegion(center: hidden, radius: 100, identifier: "Hidden")
         locationManager.startMonitoringForRegion(hiddenRegion)
         
-        let path = CLLocationCoordinate2D (latitude: 50.718454, longitude: -1.876792)
-        let pathRegion = CLCircularRegion (center: path, radius: 100, identifier: "path")
+        let path = CLLocationCoordinate2D(latitude: 50.718454, longitude: -1.876792)
+        let pathRegion = CLCircularRegion(center: path, radius: 100, identifier: "path")
         locationManager.startMonitoringForRegion(pathRegion)
         
-        let aruba = CLLocationCoordinate2D (latitude: 50.716244, longitude: -1.875628)
-        let arubaRegion = CLCircularRegion (center: aruba, radius: 100, identifier: "aruba")
+        let aruba = CLLocationCoordinate2D(latitude: 50.716244, longitude: -1.875628)
+        let arubaRegion = CLCircularRegion(center: aruba, radius: 100, identifier: "aruba")
         locationManager.startMonitoringForRegion(arubaRegion)
-        
         
     }
 
@@ -44,14 +43,74 @@ class ViewController: UIViewController {
 
 extension ViewController: CLLocationManagerDelegate {
    
+
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        print("Entering \(region.identifier)")
-    
+
+        
+        if showingAlert == false {
+            showingAlert = true
+            
+            var message = ""
+            
+            if region.identifier == "aruba" {
+                message = "youre at aruba"
+            }
+            
+            if region.identifier == "aruba" {
+                message = "youre at aruba"
+            }
+            
+            if region.identifier == "aruba" {
+                message = "youre at aruba"
+            }
+            
+            
+            
+            alert = UIAlertController(title: region.identifier, message: message , preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert!.addAction(UIAlertAction(title: "OK", style: .Default, handler: { _ in
+                self.showingAlert = false
+            }))
+            
+            alert!.addAction(UIAlertAction(title: "Done", style: .Default, handler: { _ in
+                self.showingAlert = false
+            }))
+            
+            presentViewController(alert!, animated: true, completion: nil)
+        }
+
         
     }
     
+    
     func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
-         print("Exiting \(region.identifier)")
+        if showingAlert == true {
+            if let alert = alert {
+                alert.dismissViewControllerAnimated(true, completion: { _ in
+                    self.showingAlert = false
+                })
+                
+            }
+        }
+    }
+}
+
+
+
+
+
+class CustomRegion: CLCircularRegion {
+    
+    var message: String!
+    
+    init(center: CLLocationCoordinate2D, radius: CLLocationDistance, identifier: String, message: String) {
+        super.init(center: center, radius: radius, identifier: identifier)
+        self.message = message
     }
 
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
 }
