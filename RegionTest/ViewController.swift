@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     
-            
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +47,6 @@ class ViewController: UIViewController {
             
         }
     }
-
- 
 
 }
 
@@ -115,21 +113,21 @@ extension ViewController: CLLocationManagerDelegate {
     
     
     func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
-        print("Leaving\(region.identifier)")
-        for point in points {
-            if point.name ==region.identifier {
-                point.lock()
-            }
-       // }if showingAlert == true {
-            //if let alert = alert {
-                //alert.dismissViewControllerAnimated(true, completion: { _ in
-                    //self.showingAlert = false
+        //print("Leaving\(region.identifier)")
+        //for point in points {
+            //if point.name ==region.identifier {
+                //point.lock()
+            //}
+       if showingAlert == true {
+            if let alert = alert {
+                alert.dismissViewControllerAnimated(true, completion: { _ in
+                    self.showingAlert = false
                 })
         
-      //      }
-    //    }
-  //  }
-//}
+      }
+    }
+   }
+}
 
 
 
