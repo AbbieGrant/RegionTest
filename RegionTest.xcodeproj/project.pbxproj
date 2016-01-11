@@ -15,6 +15,7 @@
 		06B715281BDE4F6C002F258E /* RegionTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B715271BDE4F6C002F258E /* RegionTestTests.swift */; };
 		06B715331BDE4F6C002F258E /* RegionTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B715321BDE4F6C002F258E /* RegionTestUITests.swift */; };
 		06B715411BDE4F92002F258E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B715401BDE4F92002F258E /* MapKit.framework */; };
+		39B8E7971C43F2ED00CB75B3 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B8E7961C43F2ED00CB75B3 /* InfoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		06B715341BDE4F6C002F258E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06B715401BDE4F92002F258E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		06B715421BDE508C002F258E /* Bournemouth-Route.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Bournemouth-Route.gpx"; sourceTree = "<group>"; };
+		39B8E7961C43F2ED00CB75B3 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				06B715141BDE4F6C002F258E /* ViewController.swift */,
 				06B715421BDE508C002F258E /* Bournemouth-Route.gpx */,
 				06B715161BDE4F6C002F258E /* Main.storyboard */,
+				39B8E7961C43F2ED00CB75B3 /* InfoViewController.swift */,
 				06B715191BDE4F6C002F258E /* Assets.xcassets */,
 				06B7151B1BDE4F6C002F258E /* LaunchScreen.storyboard */,
 				06B7151E1BDE4F6C002F258E /* Info.plist */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06B715151BDE4F6C002F258E /* ViewController.swift in Sources */,
+				39B8E7971C43F2ED00CB75B3 /* InfoViewController.swift in Sources */,
 				06B715131BDE4F6C002F258E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +493,7 @@
 				06B715391BDE4F6C002F258E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		06B7153A1BDE4F6C002F258E /* Build configuration list for PBXNativeTarget "RegionTestTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +502,7 @@
 				06B7153C1BDE4F6C002F258E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		06B7153D1BDE4F6C002F258E /* Build configuration list for PBXNativeTarget "RegionTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +511,7 @@
 				06B7153F1BDE4F6C002F258E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

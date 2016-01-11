@@ -8,8 +8,11 @@ class ViewController: UIViewController {
     
     var showingAlert = false
     var alert: UIAlertController?
+    var place: String!
     
     let locationManager = CLLocationManager()
+    
+            
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,19 +24,28 @@ class ViewController: UIViewController {
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
         
-        
-        let hidden = CLLocationCoordinate2D(latitude: 50.719794, longitude: -1.879156)
+        let hidden = CLLocationCoordinate2D(latitude: 50.718454, longitude: -1.876792)
         let hiddenRegion = CLCircularRegion(center: hidden, radius: 100, identifier: "Hidden")
         locationManager.startMonitoringForRegion(hiddenRegion)
         
-        let path = CLLocationCoordinate2D(latitude: 50.718454, longitude: -1.876792)
-        let pathRegion = CLCircularRegion(center: path, radius: 100, identifier: "path")
+        let path = CLLocationCoordinate2D(latitude: 50.716244, longitude: -1.875628)
+        let pathRegion = CLCircularRegion(center: path, radius: 100, identifier: "Path")
         locationManager.startMonitoringForRegion(pathRegion)
         
-        let aruba = CLLocationCoordinate2D(latitude: 50.716244, longitude: -1.875628)
-        let arubaRegion = CLCircularRegion(center: aruba, radius: 100, identifier: "aruba")
+        let aruba = CLLocationCoordinate2D(latitude: 50.719794, longitude: -1.879156)
+        let arubaRegion = CLCircularRegion(center: aruba, radius: 100, identifier: "Aruba")
         locationManager.startMonitoringForRegion(arubaRegion)
         
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "RegionInfo" {
+            
+            let vc = segue.destinationViewController as! InfoViewController
+            vc.place = place
+            
+        }
     }
 
  
@@ -46,37 +58,56 @@ extension ViewController: CLLocationManagerDelegate {
 
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
 
+        place = region.identifier
         
         if showingAlert == false {
             showingAlert = true
-            
-            var message = ""
-            
-            if region.identifier == "aruba" {
-                message = "youre at aruba"
+            if region.identifier == "Hidden" {
+                
+                alert = UIAlertController(title: "You decided to go through with it", message: nil, preferredStyle: .Alert)
+                let alertAction = UIAlertAction(title: "Countine...", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+                    self.showingAlert = false
+                    self.performSegueWithIdentifier("RegionInfo", sender: self)
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+                    self.showingAlert = false
+                }
+                alert!.addAction(cancelAction)
+                alert!.addAction(alertAction)
+                presentViewController(alert!, animated: true) { () -> Void in }
             }
             
-            if region.identifier == "aruba" {
-                message = "youre at aruba"
+            if region.identifier == "Path" {
+                
+                alert = UIAlertController(title: "You do know we can hear and see everything", message: nil, preferredStyle: .Alert)
+                let alertAction = UIAlertAction(title: "Countine...", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+                    self.showingAlert = false
+                    self.performSegueWithIdentifier("RegionInfo", sender: self)
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+                    self.showingAlert = false
+                }
+                alert!.addAction(cancelAction)
+                alert!.addAction(alertAction)
+                presentViewController(alert!, animated: true) { () -> Void in }
             }
             
-            if region.identifier == "aruba" {
-                message = "youre at aruba"
+            if region.identifier == "Aruba" {
+                
+                alert = UIAlertController(title: "Money, Money, Money", message: nil, preferredStyle: .Alert)
+                let alertAction = UIAlertAction(title: "Countine...", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+                    self.showingAlert = false
+                    self.performSegueWithIdentifier("RegionInfo", sender: self)
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+                    self.showingAlert = false
+                }
+                alert!.addAction(cancelAction)
+                alert!.addAction(alertAction)
+                presentViewController(alert!, animated: true) { () -> Void in }
             }
             
             
-            
-            alert = UIAlertController(title: region.identifier, message: message , preferredStyle: UIAlertControllerStyle.Alert)
-            
-            alert!.addAction(UIAlertAction(title: "OK", style: .Default, handler: { _ in
-                self.showingAlert = false
-            }))
-            
-            alert!.addAction(UIAlertAction(title: "Done", style: .Default, handler: { _ in
-                self.showingAlert = false
-            }))
-            
-            presentViewController(alert!, animated: true, completion: nil)
         }
 
         
@@ -84,16 +115,21 @@ extension ViewController: CLLocationManagerDelegate {
     
     
     func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
-        if showingAlert == true {
-            if let alert = alert {
-                alert.dismissViewControllerAnimated(true, completion: { _ in
-                    self.showingAlert = false
-                })
-                
+        print("Leaving\(region.identifier)")
+        for point in points {
+            if point.name ==region.identifier {
+                point.lock()
             }
-        }
-    }
-}
+       // }if showingAlert == true {
+            //if let alert = alert {
+                //alert.dismissViewControllerAnimated(true, completion: { _ in
+                    //self.showingAlert = false
+                })
+        
+      //      }
+    //    }
+  //  }
+//}
 
 
 
