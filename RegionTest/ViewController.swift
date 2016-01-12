@@ -6,6 +6,8 @@ import ImageIO
 class ViewController: UIViewController {
 
     @IBOutlet weak var myMap: MKMapView!
+    @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var time: UILabel!
     
     var showingAlert = false
     var alert: UIAlertController?
@@ -25,6 +27,10 @@ class ViewController: UIViewController {
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
         
+        locationManager.startUpdatingLocation()
+        
+        myMap.setUserTrackingMode(.Follow, animated: true)
+        
         let hidden = CLLocationCoordinate2D(latitude: 50.718454, longitude: -1.876792)
         let hiddenRegion = CLCircularRegion(center: hidden, radius: 100, identifier: "Hidden")
         locationManager.startMonitoringForRegion(hiddenRegion)
@@ -37,6 +43,7 @@ class ViewController: UIViewController {
         let arubaRegion = CLCircularRegion(center: aruba, radius: 100, identifier: "Aruba")
         locationManager.startMonitoringForRegion(arubaRegion)
         
+        
     }
     
     
@@ -48,15 +55,36 @@ class ViewController: UIViewController {
             
         }
     }
-
+    
 }
 
 
 extension ViewController: CLLocationManagerDelegate {
    
+    
+ 
+        
+        func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            
+            let newLocation = locations.last
+            
+            if let newLocation = newLocation {
+                print(newLocation)
+                distance.text = "\(Double(newLocation.distanceFromLocation(CLLocation(latitude: 50.716244, longitude: -1.875628))).roundToPlaces(1))m"
+            }
+            
+            
+            
+        }
+    
+    
 
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-
+        
+                
+                
+                
+        
         place = region.identifier
         
         if showingAlert == false {

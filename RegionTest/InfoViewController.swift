@@ -4,11 +4,17 @@ import CoreLocation
 
 class InfoViewController: UIViewController {
     
+    @IBOutlet weak var mainImage: UIImageView!
     var place: String!
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(place)
+        
+        
+        mainImage.image = UIImage(named: "video "+place)
+        
         
 //       locationManager.requestAlwaysAuthorization()
   //      locationManager.delegate = self
@@ -24,6 +30,8 @@ class InfoViewController: UIViewController {
     //    let arubaRegion = CLCircularRegion(center: aruba, radius: 100, identifier: "Aruba")
     //    locationManager.startMonitoringForRegion(arubaRegion)
         
-    }
+        
     
+    }
+   
 }

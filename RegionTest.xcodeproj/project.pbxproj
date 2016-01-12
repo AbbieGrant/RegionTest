@@ -15,6 +15,8 @@
 		06B715281BDE4F6C002F258E /* RegionTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B715271BDE4F6C002F258E /* RegionTestTests.swift */; };
 		06B715331BDE4F6C002F258E /* RegionTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B715321BDE4F6C002F258E /* RegionTestUITests.swift */; };
 		06B715411BDE4F92002F258E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B715401BDE4F92002F258E /* MapKit.framework */; };
+		397259941C45560900E9E317 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397259931C45560900E9E317 /* functions.swift */; settings = {ASSET_TAGS = (); }; };
+		3972599A1C4563ED00E9E317 /* MoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397259991C4563ED00E9E317 /* MoneyViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		39B8E7971C43F2ED00CB75B3 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B8E7961C43F2ED00CB75B3 /* InfoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		06B715341BDE4F6C002F258E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06B715401BDE4F92002F258E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		06B715421BDE508C002F258E /* Bournemouth-Route.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Bournemouth-Route.gpx"; sourceTree = "<group>"; };
+		397259931C45560900E9E317 /* functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
+		397259991C4563ED00E9E317 /* MoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyViewController.swift; sourceTree = "<group>"; };
 		39B8E7961C43F2ED00CB75B3 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +112,9 @@
 				06B715141BDE4F6C002F258E /* ViewController.swift */,
 				06B715421BDE508C002F258E /* Bournemouth-Route.gpx */,
 				06B715161BDE4F6C002F258E /* Main.storyboard */,
+				397259931C45560900E9E317 /* functions.swift */,
 				39B8E7961C43F2ED00CB75B3 /* InfoViewController.swift */,
+				397259991C4563ED00E9E317 /* MoneyViewController.swift */,
 				06B715191BDE4F6C002F258E /* Assets.xcassets */,
 				06B7151B1BDE4F6C002F258E /* LaunchScreen.storyboard */,
 				06B7151E1BDE4F6C002F258E /* Info.plist */,
@@ -267,6 +273,8 @@
 				06B715151BDE4F6C002F258E /* ViewController.swift in Sources */,
 				39B8E7971C43F2ED00CB75B3 /* InfoViewController.swift in Sources */,
 				06B715131BDE4F6C002F258E /* AppDelegate.swift in Sources */,
+				3972599A1C4563ED00E9E317 /* MoneyViewController.swift in Sources */,
+				397259941C45560900E9E317 /* functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +417,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RegionTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bhughes94.RegionTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -420,6 +429,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RegionTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bhughes94.RegionTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
