@@ -9,7 +9,7 @@ class InfoViewController: UIViewController {
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+           super.viewDidLoad()
         print(place)
         
         
